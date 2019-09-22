@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.mehmetkirazli.testchallenge.BuildConfig;
 import com.mehmetkirazli.testchallenge.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -29,27 +30,27 @@ public class LoginActivity extends AppCompatActivity {
         btnGiris = findViewById(R.id.btnGiris);
         swRememberMe = findViewById(R.id.swRememberMe);
 
-        prefs = getSharedPreferences("login", MODE_PRIVATE);
-        editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+        prefs = getSharedPreferences(BuildConfig.APPLICATION_ID, MODE_PRIVATE);
+        editor = prefs.edit();
 
-        if (prefs.getBoolean("rememberMe", false))
+        if (prefs.getBoolean("rememberMe", false)) // beni hatırla açıksa, doğrudan siparişlerim ekranına gidecek
             startActivity(new Intent(LoginActivity.this, OrderActivity.class));
 
         btnGiris.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if (edtUsername.getText().toString().equals("") || edtPassword.getText().toString().equals(""))
-                    Toast.makeText(getApplicationContext(), "Kullanıcı Adı ve Şifre Girilmelidir", Toast.LENGTH_SHORT).show();
+            public void onClick(View view) { // giriş butonu tıklama eventi
+                if (edtUsername.getText().toString().equals("") || edtPassword.getText().toString().equals("")) // herhangi biri boşsa uyarı versin
+                    Toast.makeText(getApplicationContext(), getString(R.string.txt_need_user_pass), Toast.LENGTH_SHORT).show();
                 else {
                     if (edtUsername.getText().toString().equals("kariyer") && edtPassword.getText().toString().equals("2019ADev")) {
-                        if (swRememberMe.isChecked())
+                        if (swRememberMe.isChecked()) // giriş başarılıysa, sonraki girişler için beni hatırla değeri değiştirilir
                             editor.putBoolean("rememberMe", true);
                         else
                             editor.putBoolean("rememberMe", false);
                         editor.apply();
-                        startActivity(new Intent(LoginActivity.this, OrderActivity.class));
+                        startActivity(new Intent(LoginActivity.this, OrderActivity.class)); // bilgiler doğruysa siparişlerim ekranına git
                     } else
-                        Toast.makeText(getApplicationContext(), "Kullanıcı Adı veya Şifre Hatalı", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.txt_warn_user_pass), Toast.LENGTH_SHORT).show();
                 }
             }
         });

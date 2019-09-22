@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.OrderActivity">
 
     <TextView
@@ -28,12 +29,9 @@
         app:layout_constraintVertical_bias="0.001" />
 
     <LinearLayout
-        android:layout_width="395dp"
-        android:layout_height="607dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,6 +39,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <ListView
+            android:id="@+id/lvOrders"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10" />
@@ -68,7 +67,7 @@
                 tools:layout_editor_absoluteY="656dp" />
 
             <Button
-                android:id="@+id/btnCikis"
+                android:id="@+id/btnExit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
@@ -81,6 +80,4 @@
                 tools:layout_editor_absoluteY="656dp" />
         </LinearLayout>
     </LinearLayout>
-
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

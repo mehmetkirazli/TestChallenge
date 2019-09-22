@@ -7,12 +7,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
-public class AppController extends Application {
+public class AppController extends Application { // volley kütüphanesini kullanabilmek için eklendi
 
     public static final String TAG = AppController.class.getSimpleName();
     private RequestQueue mRequestQueue;
     private static AppController mInstance;
-    private ImageLoader mImageLoader;
 
     @Override
     public void onCreate() {

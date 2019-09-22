@@ -7,4 +7,11 @@
     <string name="txt_myshop">MARKETİM</string>
     <string name="txt_exit">Çıkış Yap</string>
     <string name="txt_myorders">Siparişlerim</string>
+    <string name="txt_are_you_sure">Çıkış Yapmak İstediğinize Emin Misiniz ?</string>
+    <string name="txt_warning">UYARI</string>
+    <string name="txt_yes">Evet</string>
+    <string name="txt_no">İptal</string>
+    <string name="txt_error">Veriler Okunurken Hata Oluştu</string>
+    <string name="txt_need_user_pass">Kullanıcı Adı ve Şifre Girilmelidir</string>
+    <string name="txt_warn_user_pass">Kullanıcı Adı veya Şifre Hatalı</string>
 </resources>
