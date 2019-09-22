@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TestChallenge</string>
+    <string name="txt_rememberme">Beni Hatırla</string>
+    <string name="txt_username">Kullanıcı Adı</string>
+    <string name="txt_password">Şifre</string>
+    <string name="txt_login">Giriş</string>
+    <string name="txt_myshop">MARKETİM</string>
+    <string name="txt_exit">Çıkış Yap</string>
+    <string name="txt_myorders">Siparişlerim</string>
+</resources>
